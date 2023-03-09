@@ -8,17 +8,26 @@
 #define ROWS 9
 #define COLS 20
 
+
+void HistoryQuestions();
+
+void AnimalsQuestions();
+
+void GeographyQuestions();
+
+void TelevisionQuestions();
+
 void categories(char catstring[]){
     if (strcmp(catstring, "History")==0)
-        
+        HistoryQuestions();
     else if (strcmp(catstring, "Animals")==0)
-    
-    else if (strcmp(catstring, "History")==0)
-    
-    else if (strcmp(catstring, "History")==0)
-    
+        AnimalsQuestions();
+    else if (strcmp(catstring, "Geography")==0)
+        GeographyQuestions();
+    else if (strcmp(catstring, "Television")==0)
+        TelevisionQuestions();
     else{
-        printf("Invalid Category! It is case sensitive ")
+        printf("Invalid Category! It is case sensitive ");
         printf("PICK A CATEGORY!");
         fgets(catstring, 50,stdin);
         categories(catstring[]);
@@ -89,8 +98,8 @@ int selectionScreen(){
    
 int main(){
     int points = 0;
-    char catstring[50];
     selectionScreen();
+    char catstring[50];
     printf("PICK A CATEGORY!");
     fgets(catstring, 50,stdin);
     
