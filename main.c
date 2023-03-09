@@ -10,6 +10,13 @@ int points = 0;
 
 
 void HistoryQuestions(){
+    char price100[3] = { 1,0,0 };
+    char price200[3] = { 2,0,0 };
+    char price300[3] = { 3,0,0 };
+    char price400[4] = { 4,0,0 };
+    char price500[5] = { 5,0,0 };
+    
+    printf("Choose a price!");
     
 }
 void AnimalsQuestions(){
