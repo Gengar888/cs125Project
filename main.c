@@ -4,38 +4,46 @@
 #include <unistd.h>
 #include <string.h>
 
-
 #define ROWS 9
 #define COLS 20
+int points = 0;
 
-void HistoryQuestions(){return 50;}
-   
-void AnimalsQuestions(){return 50;}
 
-void GeographyQuestions(){return 50;}
+void HistoryQuestions(){
+    
+}
+void AnimalsQuestions(){
+    
+}
+    
+void GeographyQuestions(){
+    
+}
 
-void TelevisionQuestions(){return 50;}
+void TelevisionQuestions(){
+    
+}
 
 void categories(char catstring[]){
-    if (strcmp(catstring, " History")==0)
+    if (strcmp(catstring, "History\n")==0)
         HistoryQuestions();
-    else if (strcmp(catstring, " Animals")==0)
+    else if (strcmp(catstring, "Animals\n")==0)
         AnimalsQuestions();
-    else if (strcmp(catstring, " Geography")==0)
+    else if (strcmp(catstring, "Geography\n")==0)
         GeographyQuestions();
-    else if (strcmp(catstring, " Television")==0)
+    else if (strcmp(catstring, "Television\n")==0)
         TelevisionQuestions();
     else{
-        printf("Invalid Category! It is case sensitive ");
+        printf("Invalid Category! It is case sensitive\n");
         printf("PICK A CATEGORY!");
-        fgets(catstring, 50,stdin);
+        fgets(catstring, 50, stdin);
         categories(catstring);
         
     }
 }
 
 void clearScreen(){
-  sleep(1);
+  sleep(.1);
   printf("\e[2J\e[H");
 }
 
@@ -98,7 +106,6 @@ int selectionScreen(){
 }
    
 int main(){
-    int points = 0;
     selectionScreen();
     char catstring[50];
     printf("PICK A CATEGORY!");
@@ -109,12 +116,3 @@ int main(){
   
   return 0; 
 }
-
-
-
-
-
-
-
-
- 
