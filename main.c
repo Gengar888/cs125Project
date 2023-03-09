@@ -9,13 +9,16 @@
 int points = 0;
 
 
+
+
+
 void HistoryQuestions(){
     char price100[3] = { 1,0,0 };
     char price200[3] = { 2,0,0 };
     char price300[3] = { 3,0,0 };
     char price400[4] = { 4,0,0 };
     char price500[5] = { 5,0,0 };
-    
+    priceselectionscreen();
     printf("Choose a price!");
     
 }
@@ -88,7 +91,7 @@ void print_array(char lines[ROWS][COLS]){
 }
 
 
-int selectionScreen(){
+void catselectionScreen(){
     char intro[ROWS][COLS]={
     "***************",
     "*   History   *",
@@ -112,8 +115,32 @@ int selectionScreen(){
    
 }
    
+   
+void priceselectionscreen(){
+
+   char price[ROWS][COLS]={
+    "***************",
+    "*      %s     *",
+    "*      %s     *",
+    "*             *",
+    "*  JEOPARDY!  *",
+    "*      %s     *",
+    "*      %s     *",
+    "*      %s     *",
+    "***************"};
+  int y;
+  clearScreen();
+  print_array(price);
+  for(y=1; y< (ROWS-1); y++){
+    clearScreen();
+    print_array(price);
+    changeColor((y%3)+1);
+    
+    }
+}
+
 int main(){
-    selectionScreen();
+    catselectionScreen();
     char catstring[50];
     printf("PICK A CATEGORY!");
     fgets(catstring, 50,stdin);
