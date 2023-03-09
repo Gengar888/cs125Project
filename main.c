@@ -30,7 +30,7 @@ void categories(char catstring[]){
         printf("Invalid Category! It is case sensitive ");
         printf("PICK A CATEGORY!");
         fgets(catstring, 50,stdin);
-        categories(catstring[]);
+        
     }
 }
 void clearScreen(){
@@ -102,7 +102,7 @@ int main(){
     char catstring[50];
     printf("PICK A CATEGORY!");
     fgets(catstring, 50,stdin);
-    
+    categories(catstring);
    
     
   
