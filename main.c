@@ -29,6 +29,14 @@ void changeColor(int color){
   }
 }
 
+int stringcompare(char QuestionAnswer[],char answer[]);{
+
+    if(strcmp(QuestionAnswer, answer)==0)
+        return 1;
+    else
+        return 0;
+
+}
 
 void print_array(char lines[ROWS][COLS]){
 
@@ -43,13 +51,13 @@ void print_array(char lines[ROWS][COLS]){
 int selectionScreen(){
     char intro[ROWS][COLS]={
     "***************",
-    "*  Category1  *",
-    "*  Category2  *",
+    "*   History   *",
+    "*   Animals   *",
     "*             *",
     "*  JEOPARDY!  *",
     "*             *",
-    "*  Category3  *",
-    "*  Category4  *",
+    "*  Geography  *",
+    "*  Television *",
     "***************"};
   int y;
 
@@ -65,6 +73,7 @@ int selectionScreen(){
 }
    
 int main(){
+    int points = 0;
     char catstring[50];
     selectionScreen();
     printf("PICK A CATEGORY!");
