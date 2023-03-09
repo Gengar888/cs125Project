@@ -8,9 +8,24 @@
 #define ROWS 9
 #define COLS 20
 
-void categories();
+void categories(char catstring[]){
+    if (strcmp(catstring, "History")==0)
+        
+    else if (strcmp(catstring, "Animals")==0)
+    
+    else if (strcmp(catstring, "History")==0)
+    
+    else if (strcmp(catstring, "History")==0)
+    
+    else{
+        printf("Invalid Category! It is case sensitive ")
+        printf("PICK A CATEGORY!");
+        fgets(catstring, 50,stdin);
+        categories(catstring[]);
+    }
+}
 void clearScreen(){
-  sleep(1);
+  sleep(0.5);
   printf("\e[2J\e[H");
 }
 
@@ -29,7 +44,7 @@ void changeColor(int color){
   }
 }
 
-int stringcompare(char QuestionAnswer[],char InputAnswer[]);{
+int stringcompare(char QuestionAnswer[],char InputAnswer[]){
 
     if(strcmp(QuestionAnswer, InputAnswer)==0)
         return 1;
@@ -78,10 +93,17 @@ int main(){
     selectionScreen();
     printf("PICK A CATEGORY!");
     fgets(catstring, 50,stdin);
-    //if(strcmp(catstring, "back")!=0)
-    //selectionScreen();
-    //else
-    //categories(catstring);
+    
    
-   
+    
+  
+  return 0; 
 }
+
+
+
+
+
+
+
+
