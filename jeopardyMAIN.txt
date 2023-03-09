@@ -29,6 +29,15 @@ void changeColor(int color){
   }
 }
 
+int stringcompare(char QuestionAnswer[],char answer[]);{
+
+    if(strcmp(QuestionAnswer, answer)==0)
+        return 1;
+    else
+        return 0;
+
+
+}
 
 void print_array(char lines[ROWS][COLS]){
 
