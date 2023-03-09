@@ -29,9 +29,9 @@ void changeColor(int color){
   }
 }
 
-int stringcompare(char QuestionAnswer[],char answer[]);{
+int stringcompare(char QuestionAnswer[],char InputAnswer[]);{
 
-    if(strcmp(QuestionAnswer, answer)==0)
+    if(strcmp(QuestionAnswer, InputAnswer)==0)
         return 1;
     else
         return 0;
