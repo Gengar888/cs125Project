@@ -13,12 +13,56 @@ int price200 = 200;
 int price300 = 300;
 int price400 = 400;
 
+void priceselectionscreen(){
+    
+
+   char price[ROWS][COLS]={
+    "***************",
+    "*      %d     *",
+    "*      %d     *",
+    "*             *",
+    "*  JEOPARDY!  *",
+    "*      %d     *",
+    "*      %d     *",
+    "*             *",
+    "***************",};
+  int y;
+  clearScreen();
+  print_array(price);
+  for(y=1; y< (ROWS-1); y++){
+    clearScreen();
+    print_array(price);
+    changeColor((y%3)+1);
+    
+    }
+    printf("Choose a price!");
+}
 
 
 
 void HistoryQuestions(){
+    int price;
+    char InpAns;
     priceselectionscreen();
-    
+    scanf("%d",&price);
+    if(price==price100){
+        printf(" Q1");
+        
+        
+    }
+    else if(price==price200){
+        printf(" Q2");
+    }   
+    else if(price==price300){
+        printf(" Q3");
+    }
+        else if(price==price400){
+        printf(" Q4");
+    }
+    else{
+        printf(" Wrong");
+    }
+
 }
 void AnimalsQuestions(){
     
@@ -113,32 +157,6 @@ void catselectionScreen(){
    
 }
    
-   
-void priceselectionscreen(){
-    
-
-   char price[ROWS][COLS]={
-    "***************",
-    "*      %d     *",
-    "*      %d     *",
-    "*             *",
-    "*  JEOPARDY!  *",
-    "*      %d     *",
-    "*      %d     *",
-    "*             *",
-    "***************",};
-  int y;
-  clearScreen();
-  print_array(price);
-  for(y=1; y< (ROWS-1); y++){
-    clearScreen();
-    print_array(price);
-    changeColor((y%3)+1);
-    
-    }
-    printf("Choose a price!");
-}
-
 int main(){
     catselectionScreen();
     char catstring[50];
