@@ -14,18 +14,18 @@ int points = 0;
 
 void HistoryQuestions(){
     priceselectionscreen();
-    
+
 }
 void AnimalsQuestions(){
-    
+//    char
 }
-    
+
 void GeographyQuestions(){
-    
+
 }
 
 void TelevisionQuestions(){
-    
+
 }
 
 void categories(char catstring[]){
@@ -39,31 +39,31 @@ void categories(char catstring[]){
         TelevisionQuestions();
     else{
         printf("Invalid Category! It is case sensitive\n");
-        printf("PICK A CATEGORY!");
+        printf("PICK A CATEGORY! ");
         fgets(catstring, 50, stdin);
         categories(catstring);
-        
+
     }
 }
 
 void clearScreen(){
-  sleep(0.1);
-  printf("\e[2J\e[H");
+    sleep(0.1);
+    printf("\e[2J\e[H");
 }
 
 void changeColor(int color){
-  if(color==1){
-    printf(" \e[1;31m");  //bold red font
-  }
-  else if(color==2){
-    printf(" \e[1;34m");  //bold blue font
-  }
-  else if(color==3){
-    printf(" \e[1;32m");  //bold green font
-  }
-  else{
-    printf("\e[0m\n");
-  }
+    if(color==1){
+        printf(" \e[1;31m");  //bold red font
+    }
+    else if(color==2){
+        printf(" \e[1;34m");  //bold blue font
+    }
+    else if(color==3){
+        printf(" \e[1;32m");  //bold green font
+    }
+    else{
+        printf("\e[0m\n");
+    }
 }
 
 int stringcompare(char QuestionAnswer[],char InputAnswer[]){
@@ -77,75 +77,80 @@ int stringcompare(char QuestionAnswer[],char InputAnswer[]){
 
 void print_array(char lines[ROWS][COLS]){
 
-  int x;
-  for (x=0; x< ROWS; x++){
-    printf("%s\n", lines[x]);
-  }
+    int x;
+    for (x=0; x< ROWS; x++){
+        printf("%s\n", lines[x]);
+    }
 
 }
 
 
 void catselectionScreen(){
     char intro[ROWS][COLS]={
-    "***************",
-    "*   History   *",
-    "*   Animals   *",
-    "*             *",
-    "*  JEOPARDY!  *",
-    "*             *",
-    "*  Geography  *",
-    "*  Television *",
-    "***************"};
-  int y;
+            "***************",
+            "*   History   *",
+            "*   Animals   *",
+            "*             *",
+            "*  JEOPARDY!  *",
+            "*             *",
+            "*  Geography  *",
+            "*  Television *",
+            "***************"};
+    int y;
 
-  clearScreen();
-  print_array(intro);
-  for(y=1; y< (ROWS-1); y++){
     clearScreen();
     print_array(intro);
-    changeColor((y%3)+1);
-   
-  }
-   
+    for(y=1; y< (ROWS-1); y++){
+        clearScreen();
+        print_array(intro);
+        changeColor((y%3)+1);
+
+    }
+
 }
-   
-   
+
+
 void priceselectionscreen(){
-    int price100 =100;
+    int price100 = 100;
     int price200 = 200;
     int price300 = 300;
     int price400 = 400;
 
-   char price[ROWS][COLS]={
-    "***************",
-    "*      %d     *",
-    "*      %d     *",
-    "*             *",
-    "*  JEOPARDY!  *",
-    "*      %d     *",
-    "*      %d     *",
-    "*             *",
-    "***************"};
-  int y;
-  clearScreen();
-  print_array(price);
-  for(y=1; y< (ROWS-1); y++){
+    char price[ROWS][COLS]={
+            "***************",
+            "*      %d     *",
+            "*      %d     *",
+            "*             *",
+            "*  JEOPARDY!  *",
+            "*      %d     *",
+            "*      %d     *",
+            "*             *",
+            "***************"};
+    sprintf((char*)&price[1],"*    %d    *",price100);
+    sprintf((char*)&price[2],"*    %d    *",price200);
+    sprintf((char*)&price[5],"*    %d    *",price300);
+    sprintf((char*)&price[6],"*    %d    *",price400);
+
+    int y;
     clearScreen();
     print_array(price);
-    changeColor((y%3)+1);
-    
+    for(y=1; y< (ROWS-1); y++){
+        clearScreen();
+        print_array(price);
+        changeColor((y%3)+1);
+
     }
-    printf("Choose a price!");
+    printf("Choose a price! ");
 }
 
 int main(){
     catselectionScreen();
     char catstring[50];
-    printf("PICK A CATEGORY!");
+    printf("PICK A CATEGORY! ");
     fgets(catstring, 50,stdin);
     categories(catstring);
-   
-    
-  
-  return 0; 
+
+
+
+    return 0;
 }
