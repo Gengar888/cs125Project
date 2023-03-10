@@ -1,3 +1,5 @@
+//Make I/O File to output high scores at the end
+
 #include <stdio.h>
 #include <stdlib.h>
 #include <time.h>
