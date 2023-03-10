@@ -13,13 +13,7 @@ int points = 0;
 
 
 void HistoryQuestions(){
-    char price100[3] = { 1,0,0 };
-    char price200[3] = { 2,0,0 };
-    char price300[3] = { 3,0,0 };
-    char price400[4] = { 4,0,0 };
-    char price500[5] = { 5,0,0 };
     priceselectionscreen();
-    printf("Choose a price!");
     
 }
 void AnimalsQuestions(){
@@ -53,7 +47,7 @@ void categories(char catstring[]){
 }
 
 void clearScreen(){
-  sleep(.1);
+  sleep(0.1);
   printf("\e[2J\e[H");
 }
 
@@ -117,16 +111,20 @@ void catselectionScreen(){
    
    
 void priceselectionscreen(){
+    int price100 =100;
+    int price200 = 200;
+    int price300 = 300;
+    int price400 = 400;
 
    char price[ROWS][COLS]={
     "***************",
-    "*      %s     *",
-    "*      %s     *",
+    "*      %d     *",
+    "*      %d     *",
     "*             *",
     "*  JEOPARDY!  *",
-    "*      %s     *",
-    "*      %s     *",
-    "*      %s     *",
+    "*      %d     *",
+    "*      %d     *",
+    "*             *",
     "***************"};
   int y;
   clearScreen();
@@ -137,6 +135,7 @@ void priceselectionscreen(){
     changeColor((y%3)+1);
     
     }
+    printf("Choose a price!");
 }
 
 int main(){
