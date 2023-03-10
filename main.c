@@ -6,8 +6,12 @@
 
 #define ROWS 9
 #define COLS 20
-int points = 0;
 
+int points = 0;
+int price100 =100;
+int price200 = 200;
+int price300 = 300;
+int price400 = 400;
 
 
 
@@ -111,10 +115,7 @@ void catselectionScreen(){
    
    
 void priceselectionscreen(){
-    int price100 =100;
-    int price200 = 200;
-    int price300 = 300;
-    int price400 = 400;
+    
 
    char price[ROWS][COLS]={
     "***************",
@@ -125,7 +126,7 @@ void priceselectionscreen(){
     "*      %d     *",
     "*      %d     *",
     "*             *",
-    "***************"};
+    "***************",};
   int y;
   clearScreen();
   print_array(price);
