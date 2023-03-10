@@ -12,17 +12,18 @@ int price100 = 100;
 int price200 = 200;
 int price300 = 300;
 int price400 = 400;
-
+char InpAns[50];
 
 
 
 void HistoryQuestions(){
    int price;
-    char InpAns;
+    
     priceselectionscreen();
     scanf("%d",&price);
     if(price==price100){
         printf(" Q1");
+        fgets(InpAns, 50 ,stdin);
     }
     else if(price==price200){
         printf(" Q2");
@@ -61,7 +62,7 @@ void categories(char catstring[]){
         TelevisionQuestions();
     else{
         printf("Invalid Category! It is case sensitive\n");
-        printf("PICK A CATEGORY! ");
+        printf("PICK A CATEGORY!");
         fgets(catstring, 50, stdin);
         categories(catstring);
         
@@ -158,7 +159,7 @@ void priceselectionscreen(){
 int main(){
     catselectionScreen();
     char catstring[50];
-    printf("PICK A CATEGORY! ");
+    printf("PICK A CATEGORY!");
     fgets(catstring, 50 ,stdin);
     categories(catstring);
    
