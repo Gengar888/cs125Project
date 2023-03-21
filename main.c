@@ -24,17 +24,17 @@ void HistoryQuestions(){
     priceselectionscreen();
     scanf("%d",&price);
     if(price==price100){
-        printf("This is the smallest state in the United States. ");
+        printf("Q1 ");
         fgets(InpAns, 50 ,stdin);
     }
     else if(price==price200){
-        printf("This is the smallest country in the world. ");
+        printf("Q2 ");
     }   
     else if(price==price300){
-        printf("This capital city is the most populous in the Western Hemisphere. ");
+        printf("Q3 ");
     }
         else if(price==price400){
-        printf("This sea is the only sea on the planet to not have a coastline. ");
+        printf("Q4 ");
     }
     else{
         printf(" Wrong");
