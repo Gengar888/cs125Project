@@ -24,17 +24,17 @@ void HistoryQuestions(){
     priceselectionscreen();
     scanf("%d",&price);
     if(price==price100){
-        printf(" Q1");
+        printf("This is the smallest state in the United States. ");
         fgets(InpAns, 50 ,stdin);
     }
     else if(price==price200){
-        printf(" Q2");
+        printf("This is the smallest country in the world. ");
     }   
     else if(price==price300){
-        printf(" Q3");
+        printf("This capital city is the most populous in the Western Hemisphere. ");
     }
         else if(price==price400){
-        printf(" Q4");
+        printf("This sea is the only sea on the planet to not have a coastline. ");
     }
     else{
         printf(" Wrong");
@@ -42,11 +42,34 @@ void HistoryQuestions(){
 
 }
 void AnimalsQuestions(){
+    int price;
+    
     priceselectionscreen();
+    
 }
     
 void GeographyQuestions(){
+    int price;
+    
     priceselectionscreen();
+    
+    scanf("%d%*c",&price); // "%*c" This makes the fgets work because it makes fgets read a character and not save it  
+    if(price==price100){   // meaning when we hit "Enter" after picking the price, the fgets will now work.
+        printf("This is the smallest state in the United States. \n");
+        fgets(InpAns, 50 ,stdin);
+    }
+    else if(price==price200){
+        printf("This is the smallest country in the world. ");
+    }   
+    else if(price==price300){
+        printf("This capital city is the most populous in the Western Hemisphere. ");
+    }
+        else if(price==price400){
+        printf("This sea is the only sea on the planet to not have a coastline. ");
+    }
+    else{
+        printf(" Wrong");
+}
 }
 
 void TelevisionQuestions(){
