@@ -59,13 +59,16 @@ void GeographyQuestions(){
         fgets(InpAns, 50 ,stdin);
     }
     else if(price==price200){
-        printf("This is the smallest country in the world. ");
+        printf("This is the smallest country in the world. \n");
+        fgets(InpAns, 50 ,stdin);
     }   
     else if(price==price300){
-        printf("This capital city is the most populous in the Western Hemisphere. ");
+        printf("This capital city is the most populous in the Western Hemisphere. \n");
+        fgets(InpAns, 50 ,stdin);
     }
         else if(price==price400){
-        printf("This sea is the only sea on the planet to not have a coastline. ");
+        printf("This sea is the only sea on the planet to not have a coastline. \n");
+        fgets(InpAns, 50 ,stdin);
     }
     else{
         printf(" Wrong");
