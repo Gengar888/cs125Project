@@ -111,14 +111,14 @@ void GeographyQuestions(){
         fgets(InpAns, 50 ,stdin);
         if (strcmp (InpAns, "Rhode Island\n")==0 ){
             printf("Correct! +50 points!\n");
-            sleep(3);
+            while( getchar() != '\n' );
             points + 50;
             main();
         }
         
         else{
         printf("Incorrect!");
-        sleep(3);
+        while( getchar() != '\n' );
         main();
         
         }
@@ -136,7 +136,9 @@ void GeographyQuestions(){
             fgets(InpAns, 50 ,stdin);
         }
     else{
-        printf(" Wrong");
+        printf("You have already chosen this price & catergory!");
+        while( getchar() != '\n' );
+        main();
     }
     
 }
