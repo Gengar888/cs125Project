@@ -99,20 +99,20 @@ void priceselectionscreen(){
     printf("Choose a price! ");
 }
 
-void GeographyQuestions(){
+int GeographyQuestions(){
     int price;
     
     priceselectionscreen();
     
     scanf("%d%*c",&price); // "%*c" This makes the fgets work because it makes fgets read a character and not save it  // meaning when we hit "Enter" after picking the price, the fgets will now work.
     if(price==price100 && GeographyToken100 == 0 ){   //Token makes sure you havent chosen this problem before
-        GeographyToken100 + 1;
+        GeographyToken100 ++;
         printf("This is the smallest state in the United States. \n");
         fgets(InpAns, 50 ,stdin);
         if (strcmp (InpAns, "Rhode Island\n")==0 ){
-            printf("Correct! +50 points!\n");
+            printf("Correct! +100 points!\n");
             while( getchar() != '\n' );
-            points + 50;
+            points + 100;
             main();
         }
         
@@ -143,7 +143,7 @@ void GeographyQuestions(){
     
 }
 
-void HistoryQuestions(){
+int HistoryQuestions(){
     int price;
     priceselectionscreen();
     
@@ -166,7 +166,7 @@ void HistoryQuestions(){
     }
 
 }
-void AnimalsQuestions(){
+int AnimalsQuestions(){
     int price;
     
     priceselectionscreen();
@@ -175,7 +175,7 @@ void AnimalsQuestions(){
     
 
 
-void TelevisionQuestions(){
+int TelevisionQuestions(){
     priceselectionscreen();
 }
 
