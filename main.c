@@ -111,6 +111,7 @@ void GeographyQuestions(){
         fgets(InpAns, 50 ,stdin);
         if (strcmp (InpAns, "Rhode Island\n")==0 ){
             printf("Correct! +50 points!\n");
+            sleep(3);
             points + 50;
             main();
         }
