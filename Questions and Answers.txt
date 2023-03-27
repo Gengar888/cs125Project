@@ -17,7 +17,7 @@ $300 - Q3: This animal has the longest neck of any animal. A: What is a giraffe?
 $400 - Q4: This animal reaches the fastest speeds in the animal kingdom. A: What is a peregrine falcon?
 
 Television & Movies
-$100 - Q1: This is the name of the Matrix's main character. A: What is Neo?
+$100 - Q1: This is the name of the Matrix's main character. A: Who is Neo?
 $200 - Q2: This movie won Best Picture in 2020. A: What is Parasite?
 $300 - Q3: This is the first movie directed by Quentin Tarantino. A: What is Reservoir Dogs?
 $400 - Q4: This is the total number of Simpson episodes. A: What is 744?
