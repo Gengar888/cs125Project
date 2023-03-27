@@ -120,21 +120,59 @@ int GeographyQuestions(){
         printf("Incorrect!");
         while( getchar() != '\n' );
         main();
-        
         }
-    }
+}
     else if(price==price200 && GeographyToken200 == 0){
+        GeographyToken200++;
         printf("This is the smallest country in the world. \n");
         fgets(InpAns, 50 ,stdin);
-    }   
-    else if(price==price300 && GeographyToken300 == 0){
-            printf("This capital city is the most populous in the Western Hemisphere. \n");
-            fgets(InpAns, 50 ,stdin);
-    }
-    else if(price==price400){
-            printf("This sea is the only sea on the planet to not have a coastline. \n");
-            fgets(InpAns, 50 ,stdin);
+        if (strcmp (InpAns, "What is Vatican City?\n")==0 ){
+            printf("Correct! +200 points!\n");
+            while( getchar() != '\n' );
+            points + 200;
+            main();
         }
+        
+        else{
+        printf("Incorrect!");
+        while( getchar() != '\n' );
+        main();
+    }
+}
+    else if(price==price300 && GeographyToken300 == 0){
+        GeographyToken300++;
+        printf("This capital city is the most populous in the Western Hemisphere. \n");
+        fgets(InpAns, 50 ,stdin);
+        if (strcmp (InpAns, "What is Sao Paulo?\n")==0 ){
+            printf("Correct! +300 points!\n");
+            while( getchar() != '\n' );
+            points + 300;
+            main();
+        }
+        
+        else{
+        printf("Incorrect!");
+        while( getchar() != '\n' );
+        main();
+    }
+}
+    else if(price==price400 && GeographyToken400 == 0){
+        GeographyToken400++;
+        printf("This sea is the only sea on the planet to not have a coastline. \n");
+        fgets(InpAns, 50 ,stdin);
+        if (strcmp (InpAns, "What is the Sargasso Sea?\n")==0 ){
+            printf("Correct! +400 points!\n");
+            while( getchar() != '\n' );
+            points + 400;
+            main();
+        }
+        
+        else{
+        printf("Incorrect!");
+        while( getchar() != '\n' );
+        main();
+    }
+}
     else{
         printf("You have already chosen this price & category!");
         while( getchar() != '\n' );
@@ -145,26 +183,89 @@ int GeographyQuestions(){
 
 int HistoryQuestions(){
     int price;
+    
     priceselectionscreen();
     
-    scanf("%d%*c",&price);
-    if(price==price100){
-        printf("Q1 ");
+    scanf("%d%*c",&price); // "%*c" This makes the fgets work because it makes fgets read a character and not save it  // meaning when we hit "Enter" after picking the price, the fgets will now work.
+    if(price==price100 && HistoryToken100 == 0 ){   //Token makes sure you havent chosen this problem before
+        HistoryToken100++;
+        printf("America was founded in this year. \n");
         fgets(InpAns, 50 ,stdin);
+        if (strcmp (InpAns, "What is 1776?\n")==0 ){
+            printf("Correct! +100 points!\n");
+            while( getchar() != '\n' );
+            points + 100;
+            main();
+        }
+        
+        else{
+        printf("Incorrect!");
+        while( getchar() != '\n' );
+        main();
+        }
+}
+    else if(price==price200 && HistoryToken200 == 0){
+        HistoryToken200++;
+        printf("This Japanese city became the first in history to have a nuclear warhead dropped on it? \n");
+        fgets(InpAns, 50 ,stdin);
+        if (strcmp (InpAns, "What is Hiroshima?\n")==0 ){
+            printf("Correct! +200 points!\n");
+            while( getchar() != '\n' );
+            points + 200;
+            main();
+        }
+        
+        else{
+        printf("Incorrect!");
+        while( getchar() != '\n' );
+        main();
     }
-    else if(price==price200){
-        printf("Q2 ");
-    }   
-    else if(price==price300){
-        printf("Q3 ");
+}
+    else if(price==price300 && HistoryToken300 == 0){
+        HistoryToken300++;
+        printf("Archduke Franz Ferdinand died in this month and this year. \n");
+        fgets(InpAns, 50 ,stdin);
+        if (strcmp (InpAns, "What is June 1914?\n")==0 ){
+            printf("Correct! +300 points!\n");
+            while( getchar() != '\n' );
+            points + 300;
+            main();
+        }
+        
+        else{
+        printf("Incorrect!");
+        while( getchar() != '\n' );
+        main();
     }
-        else if(price==price400){
-        printf("Q4 ");
+}
+    else if(price==price400 && HistoryToken400 == 0){
+        HistoryToken400++;
+        printf("This king lead the largest calvary charge in recorded history. \n");
+        fgets(InpAns, 50 ,stdin);
+        if (strcmp (InpAns, "Who is King John III Sobieski?")==0 ){
+            printf("Correct! +400 points!\n");
+            while( getchar() != '\n' );
+            points + 400;
+            main();
+        }
+        else if (strcmp (InpAns, "Who is King John 3 Sobieski?")==0 ){
+            printf("Correct! +400 points!\n");
+            while( getchar() != '\n' );
+            points + 400;
+            main();
+        }
+        
+        else{
+        printf("Incorrect!");
+        while( getchar() != '\n' );
+        main();
     }
+}
     else{
-        printf(" Wrong");
+        printf("You have already chosen this price & category!");
+        while( getchar() != '\n' );
+        main();
     }
-
 }
 
 int AnimalsQuestions(){
