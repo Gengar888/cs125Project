@@ -16,26 +16,35 @@ int GeographyToken100 = 0;
 int HistoryToken100 = 0;
 int TelevisionToken100 = 0;
 
+int tokensFor100[5] = {0,0,0,0,0}
+
 int AnimalsToken200 = 0;
 int GeographyToken200 = 0;
 int HistoryToken200 = 0;
 int TelevisionToken200 = 0;
+
+int tokensFor200[5] = {0,0,0,0,0}
 
 int AnimalsToken300 = 0;
 int GeographyToken300 = 0;
 int HistoryToken300 = 0;
 int TelevisionToken300 = 0;
 
+int tokensFor300[5] = {0,0,0,0,0}
+
 int AnimalsToken400 = 0;
 int GeographyToken400 = 0;
 int HistoryToken400 = 0;
 int TelevisionToken400 = 0;
+
+int tokensFor400[5] = {0,0,0,0,0}
 
 int price100 = 100;
 int price200 = 200;
 int price300 = 300;
 int price400 = 400;
 
+int priceAR[4] = {100,200,300,400}
 
 
 void changeColor(int color){
