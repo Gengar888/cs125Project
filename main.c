@@ -129,13 +129,13 @@ int GeographyQuestions(){
         if (strcmp (InpAns, "What is Rhode Island?\n")==0 ){
             printf("Correct! +100 points!\n");
             while( getchar() != '\n' );
-            points =+100;
+            points+=100;
             menu();
         }
         
         else{
         printf("Incorrect! -100 points!\nPress Enter to continue");
-        points =-100;
+        points-=100;
         while( getchar() != '\n' );
         menu();
         }
@@ -147,13 +147,13 @@ int GeographyQuestions(){
         if (strcmp (InpAns, "What is Vatican City?\n")==0 ){
             printf("Correct! +200 points!\nPress Enter to continue");
             while( getchar() != '\n' );
-            points =+200;
+            points+=200;
             menu();
         }
         
         else{
         printf("Incorrect! Press Enter to continue");
-        points =-200;
+        points-=200;
         while( getchar() != '\n' );
         menu();
     }
@@ -165,13 +165,13 @@ int GeographyQuestions(){
         if (strcmp (InpAns, "What is Sao Paulo?\n")==0 ){
             printf("Correct! +300 points!\n Press Enter to continue");
             while( getchar() != '\n' );
-            points =+300;
+            points+=300;
             menu();
         }
         
         else{
         printf("Incorrect! Press Enter to continue");
-        points=-300;
+        points-=300;
         while( getchar() != '\n' );
         menu();
     }
@@ -183,13 +183,13 @@ int GeographyQuestions(){
         if (strcmp (InpAns, "What is the Sargasso Sea?\n")==0 ){
             printf("Correct! +400 points!\n Press Enter to continue");
             while( getchar() != '\n' );
-            points =+400;
+            points+=400;
             menu();
         }
         
         else{
         printf("Incorrect! Press Enter to continue");
-        points=-400;
+        points-=400;
         while( getchar() != '\n' );
         menu();
     }
@@ -215,13 +215,13 @@ int HistoryQuestions(){
         if (strcmp (InpAns, "What is 1776?\n")==0 ){
             printf("Correct! +100 points!\n Press Enter to continue");
             while( getchar() != '\n' );
-            points +=100;
+            points+=100;
             menu();
         }
         
         else{
         printf("Incorrect! Press Enter to continue");
-        points=-100;
+        points-=100;
         while( getchar() != '\n' );
         menu();
         }
@@ -233,13 +233,13 @@ int HistoryQuestions(){
         if (strcmp (InpAns, "What is Hiroshima?\n")==0 ){
             printf("Correct! +200 points!\n Press Enter to continue");
             while( getchar() != '\n' );
-            points=+200;
+            points+=200;
             menu();
         }
         
         else{
         printf("Incorrect! Press Enter to continue");
-        points=-200;
+        points-=200;
         while( getchar() != '\n' );
         menu();
     }
@@ -251,13 +251,13 @@ int HistoryQuestions(){
         if (strcmp (InpAns, "What is June 1914?\n")==0 ){
             printf("Correct! +300 points!\n Press Enter to continue");
             while( getchar() != '\n' );
-            points=+300;
+            points+=300;
             menu();
         }
         
         else{
         printf("Incorrect! Press Enter to continue");
-        points=-300;
+        points-=300;
         while( getchar() != '\n' );
         menu();
     }
@@ -269,19 +269,19 @@ int HistoryQuestions(){
         if (strcmp (InpAns, "Who is King John III Sobieski?\n")==0 ){
             printf("Correct! +400 points!\n Press Enter to continue");
             while( getchar() != '\n' );
-            points=+400;
+            points+=400;
             menu();
         }
         else if (strcmp (InpAns, "Who is King John 3 Sobieski?\n")==0 ){
             printf("Correct! +400 points!\n Press Enter to continue");
             while( getchar() != '\n' );
-            points=+400;
+            points+=400;
             menu();
         }
         
         else{
         printf("Incorrect! Press Enter to continue");
-        points=-400;
+        points-=400;
         while( getchar() != '\n' );
         menu();
     }
@@ -306,7 +306,7 @@ int AnimalsQuestions(){
         if (strcmp (InpAns, "What is a cheetah?\n")==0 ){
             printf("Correct! +100 points!\n Press Enter to continue");
             while( getchar() != '\n' );
-            points =+100;
+            points+=100;
             menu();
         }
         
@@ -324,13 +324,13 @@ int AnimalsQuestions(){
         if (strcmp (InpAns, "What is a zebra?\n")==0 ){
             printf("Correct! +200 points!\n Press Enter to continue");
             while( getchar() != '\n' );
-            points =+200;
+            points+=200;
             menu();
         }
         
         else{
         printf("Incorrect! Press Enter to continue");
-        points=-200;
+        points-=200;
         while( getchar() != '\n' );
         menu();
     }
@@ -342,13 +342,13 @@ int AnimalsQuestions(){
         if (strcmp (InpAns, "What is a giraffe?\n")==0 ){
             printf("Correct! +300 points!\n Press Enter to continue");
             while( getchar() != '\n' );
-            points =+300;
+            points+=300;
             menu();
         }
         
         else{
         printf("Incorrect! Press Enter to continue");
-        points=-300;
+        points-=300;
         while( getchar() != '\n' );
         menu();
     }
@@ -360,13 +360,13 @@ int AnimalsQuestions(){
         if (strcmp (InpAns, "What is a peregrine falcon?\n")==0 ){
             printf("Correct! +400 points!\n Press Enter to continue");
             while( getchar() != '\n' );
-            points =+400;
+            points+=400;
             menu();
         }
         
         else{
         printf("Incorrect! Press Enter to continue");
-        points =-400;
+        points-=400;
         while( getchar() != '\n' );
         menu();
     }
@@ -392,13 +392,13 @@ int TelevisionQuestions(){
         if (strcmp (InpAns, "Who is Neo?\n")==0 ){
             printf("Correct! +100 points!\n Press Enter to continue");
             while( getchar() != '\n' );
-            points =+100;
+            points+=100;
             menu();
         }
         
         else{
         printf("Incorrect Press Enter to continue!");
-        points =-100;
+        points-=100;
         while( getchar() != '\n' );
         menu();
         }
@@ -410,13 +410,13 @@ int TelevisionQuestions(){
         if (strcmp (InpAns, "What is Parasite?\n")==0 ){
             printf("Correct! +200 points!\n Press Enter to continue");
             while( getchar() != '\n' );
-            points =+200;
+            points+=200;
             menu();
         }
         
         else{
         printf("Incorrect! Press Enter to continue");
-        points=-200;
+        points-=200;
         while( getchar() != '\n' );
         menu();
     }
@@ -434,7 +434,7 @@ int TelevisionQuestions(){
         
         else{
         printf("Incorrect! Press Enter to continue");
-        points=-300;
+        points-=300;
         while( getchar() != '\n' );
         menu();
     }
@@ -446,13 +446,13 @@ int TelevisionQuestions(){
         if (strcmp (InpAns, "What is 744?\n")==0 ){
             printf("Correct! +400 points!\n Press Enter to continue");
             while( getchar() != '\n' );
-            points =+400;
+            points+=400;
             menu();
         }
         
         else{
         printf("Incorrect! Press Enter to continue");
-        points=-400;
+        points-=400;
         while( getchar() != '\n' );
         menu();
     }
