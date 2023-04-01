@@ -70,7 +70,7 @@ void print_array(char lines[ROWS][COLS]){
 }
 
 void clearScreen(){
-  sleep(0.1);
+  sleep(1);
   printf("\e[2J\e[H");
 }
 
@@ -90,10 +90,10 @@ void priceselectionscreen(){
             "*      %d  *",
             "*      %d      *",
             "***************"};
-    sprintf((char*)&price[1],"*    %d      *",price100);
-    sprintf((char*)&price[2],"*    %d      *",price200);
-    sprintf((char*)&price[6],"*    %d      *",price300);
-    sprintf((char*)&price[7],"*    %d      *",price400);
+    sprintf((char*)&price[1],"*     %d     *",price100);
+    sprintf((char*)&price[2],"*     %d     *",price200);
+    sprintf((char*)&price[6],"*     %d     *",price300);
+    sprintf((char*)&price[7],"*     %d     *",price400);
 
     int y;
     clearScreen();
