@@ -1,4 +1,3 @@
- 
 //Make I/O File to output high scores at the end
 
 #include <stdio.h>
@@ -519,6 +518,14 @@ int menu(){
 
 int main(){
     menu();
+
+//defines date and time
+time_t t;
+time(&t);
+  
+FILE *ptr = fopen("highscores.txt", "a");
+fprintf(ptr, "**************************\n%s\n**************************\nHIGH SCORE: %d", ctime(&t), &points);
+fclose(ptr);
    
 return 0; 
 }
