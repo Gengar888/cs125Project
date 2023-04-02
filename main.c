@@ -1,3 +1,4 @@
+ 
 //Make I/O File to output high scores at the end
 
 #include <stdio.h>
@@ -11,26 +12,26 @@
 
 int points = 0;
 char InpAns[100];
-int AnimalsToken100 = 0;
+int AnimalsToken100 = 0;    //All token variables are used to ensure a user can't pick a question twice.
 int GeographyToken100 = 0;
 int HistoryToken100 = 0;
-int TelevisionToken100 = 0;
+int MoviesToken100 = 0;
 
 int AnimalsToken200 = 0;
 int GeographyToken200 = 0;
 int HistoryToken200 = 0;
-int TelevisionToken200 = 0;
+int MoviesToken200 = 0;
 
 
 int AnimalsToken300 = 0;
 int GeographyToken300 = 0;
 int HistoryToken300 = 0;
-int TelevisionToken300 = 0;
+int MoviesToken300 = 0;
 
 int AnimalsToken400 = 0;
 int GeographyToken400 = 0;
 int HistoryToken400 = 0;
-int TelevisionToken400 = 0;
+int MoviesToken400 = 0;
 
 int price100 = 100;
 int price200 = 200;
@@ -44,9 +45,10 @@ int menu();
 int HistoryQuestions();
 int GeographyQuestions();
 int AnimalsQuestions();
-int TelevisionQuestions();
+int MoviesQuestions();
 
-void changeColor(int color){
+//Function that makes the menu flash in different colors 
+void changeColor(int color){   
   if(color==1){
     printf(" \e[1;31m");  //bold red font
   }
@@ -74,7 +76,8 @@ void clearScreen(){
   printf("\e[2J\e[H");
 }
 
-void priceselectionscreen(){
+//Function that allows a user to pick the price of the question they want.
+void priceselectionscreen(){  
     int price100 = 100;
     int price200 = 200;
     int price300 = 300;
@@ -98,16 +101,20 @@ void priceselectionscreen(){
     int y;
     clearScreen();
     print_array(price);
-    for(y=1; y< (ROWS-1); y++){
+    
+    do{
+        y++;
         clearScreen();
         print_array(price);
         changeColor((y%3)+1);
-
+        printf("\nChoose a price! ");
     }
-    printf("\nChoose a price! ");
+    while(y=1 && y< (ROWS-1));
+   
 }
 
-int GeographyQuestions(){
+//Function with all the Geography questions & error checking inside to account for any user errors.
+int GeographyQuestions(){  
     int price;
     
     priceselectionscreen();
@@ -193,6 +200,7 @@ int GeographyQuestions(){
     
 }
 
+//Function with all the History questions & error checking inside to account for any user errors.
 int HistoryQuestions(){
     int price;
     
@@ -284,6 +292,7 @@ int HistoryQuestions(){
     }
 }
 
+//Function with all the Animals questions & error checking inside to account for any user errors.
 int AnimalsQuestions(){
     int price;
     
@@ -369,15 +378,15 @@ int AnimalsQuestions(){
     }
 } 
 
-
-int TelevisionQuestions(){
+//Function with all the Movies questions & error checking inside to account for any user errors.
+int MoviesQuestions(){
     int price;
     
     priceselectionscreen();
     
     scanf("%d%*c",&price); // "%*c" This makes the fgets work because it makes fgets read a character and not save it  // meaning when we hit "Enter" after picking the price, the fgets will now work.
-    if(price==price100 && TelevisionToken100 == 0 ){   //Token makes sure you havent chosen this problem before
-        TelevisionToken100++;
+    if(price==price100 && MoviesToken100 == 0 ){   //Token makes sure you havent chosen this problem before
+        MoviesToken100++;
         printf("This is the name of the Matrix's main character. \n");
         fgets(InpAns, 50 ,stdin);
         if (strcmp (InpAns, "Who is Neo?\n")==0 ){
@@ -394,8 +403,8 @@ int TelevisionQuestions(){
         menu();
         }
 }
-    else if(price==price200 && TelevisionToken200 == 0){
-        TelevisionToken200++;
+    else if(price==price200 && MoviesToken200 == 0){
+        MoviesToken200++;
         printf("This movie won Best Picture in 2020. \n");
         fgets(InpAns, 100 ,stdin);
         if (strcmp (InpAns, "What is Parasite?\n")==0 ){
@@ -412,8 +421,8 @@ int TelevisionQuestions(){
         menu();
     }
 }
-    else if(price==price300 && TelevisionToken300 == 0){
-        TelevisionToken300++;
+    else if(price==price300 && MoviesToken300 == 0){
+        MoviesToken300++;
         printf("This is the first movie directed by Quentin Tarantino. \n");
         fgets(InpAns, 50 ,stdin);
         if (strcmp (InpAns, "What is Reservoir Dogs?\n")==0 ){
@@ -430,11 +439,11 @@ int TelevisionQuestions(){
         menu();
     }
 }
-    else if(price==price400 && TelevisionToken400 == 0){
-        TelevisionToken400++;
-        printf("This is the total number of Simpson episodes. \n");
+    else if(price==price400 && MoviesToken400 == 0){
+        MoviesToken400++;
+        printf("This the only actor to receive an Oscar nomination for acting in a Lord of the Rings movie. \n");
         fgets(InpAns, 50 ,stdin);
-        if (strcmp (InpAns, "What is 744?\n")==0 ){
+        if (strcmp (InpAns, "Who is Ian McKellen?\n")==0 ){
             printf("Correct! +400 points!\n Press Enter to continue");
             while( getchar() != '\n' );
             points+=400;
@@ -455,6 +464,7 @@ int TelevisionQuestions(){
     }
 } 
 
+//Function that allows users to pick what category of question they would like.
 void catselectionScreen(){
     char intro[ROWS][COLS]={
     "***************",
@@ -464,7 +474,7 @@ void catselectionScreen(){
     "*  JEOPARDY!  *",
     "*             *",
     "*  Geography  *",
-    "*  Television *",
+    "*   Movies    *",
     "***************"};
   int y;
 
@@ -479,6 +489,7 @@ void catselectionScreen(){
    
 }
 
+//Function that navigates a user to their selected category menu.
 void categories(char catstring[]){
     if (strcmp(catstring, "History\n")==0)
         HistoryQuestions();
@@ -486,8 +497,8 @@ void categories(char catstring[]){
         AnimalsQuestions();
     else if (strcmp(catstring, "Geography\n")==0)
         GeographyQuestions();
-    else if (strcmp(catstring, "Television\n")==0)
-        TelevisionQuestions();
+    else if (strcmp(catstring, "Movies\n")==0)
+        MoviesQuestions();
     else{
         printf("Invalid Category! It is case sensitive\n");
         printf("PICK A CATEGORY!");
