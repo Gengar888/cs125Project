@@ -16,36 +16,35 @@ int GeographyToken100 = 0;
 int HistoryToken100 = 0;
 int TelevisionToken100 = 0;
 
-int tokensFor100[5] = {0,0,0,0,0}
-
 int AnimalsToken200 = 0;
 int GeographyToken200 = 0;
 int HistoryToken200 = 0;
 int TelevisionToken200 = 0;
 
-int tokensFor200[5] = {0,0,0,0,0}
 
 int AnimalsToken300 = 0;
 int GeographyToken300 = 0;
 int HistoryToken300 = 0;
 int TelevisionToken300 = 0;
 
-int tokensFor300[5] = {0,0,0,0,0}
-
 int AnimalsToken400 = 0;
 int GeographyToken400 = 0;
 int HistoryToken400 = 0;
 int TelevisionToken400 = 0;
-
-int tokensFor400[5] = {0,0,0,0,0}
 
 int price100 = 100;
 int price200 = 200;
 int price300 = 300;
 int price400 = 400;
 
-int priceAR[4] = {100,200,300,400}
-
+void catselectionScreen();
+void catselectionScreen();
+void categories();
+int menu();
+int HistoryQuestions();
+int GeographyQuestions();
+int AnimalsQuestions();
+int TelevisionQuestions();
 
 void changeColor(int color){
   if(color==1){
@@ -71,7 +70,7 @@ void print_array(char lines[ROWS][COLS]){
 }
 
 void clearScreen(){
-  sleep(0.1);
+  sleep(1);
   printf("\e[2J\e[H");
 }
 
@@ -87,25 +86,28 @@ void priceselectionscreen(){
             "*      %d  *",
             "*             *",
             "*  JEOPARDY!  *",
-            "*      %d  *",
-            "*      %d  *",
             "*             *",
+            "*      %d  *",
+            "*      %d      *",
             "***************"};
-    sprintf((char*)&price[1],"*    %d    *",price100);
-    sprintf((char*)&price[2],"*    %d    *",price200);
-    sprintf((char*)&price[5],"*    %d    *",price300);
-    sprintf((char*)&price[6],"*    %d    *",price400);
+    sprintf((char*)&price[1],"*     %d     *",price100);
+    sprintf((char*)&price[2],"*     %d     *",price200);
+    sprintf((char*)&price[6],"*     %d     *",price300);
+    sprintf((char*)&price[7],"*     %d     *",price400);
 
     int y;
     clearScreen();
     print_array(price);
-    for(y=1; y< (ROWS-1); y++){
+    
+    do{
+        y++;
         clearScreen();
         print_array(price);
         changeColor((y%3)+1);
-
+        printf("\nChoose a price! ");
     }
-    printf("Choose a price! ");
+    while(y=1 && y< (ROWS-1));
+   
 }
 
 int GeographyQuestions(){
@@ -121,15 +123,15 @@ int GeographyQuestions(){
         if (strcmp (InpAns, "What is Rhode Island?\n")==0 ){
             printf("Correct! +100 points!\n");
             while( getchar() != '\n' );
-            points =+100;
-            main();
+            points+=100;
+            menu();
         }
         
         else{
         printf("Incorrect! -100 points!\nPress Enter to continue");
-        points =-100;
+        points-=100;
         while( getchar() != '\n' );
-        main();
+        menu();
         }
 }
     else if(price==price200 && GeographyToken200 == 0){
@@ -139,15 +141,15 @@ int GeographyQuestions(){
         if (strcmp (InpAns, "What is Vatican City?\n")==0 ){
             printf("Correct! +200 points!\nPress Enter to continue");
             while( getchar() != '\n' );
-            points =+200;
-            main();
+            points+=200;
+            menu();
         }
         
         else{
         printf("Incorrect! Press Enter to continue");
-        points =-200;
+        points-=200;
         while( getchar() != '\n' );
-        main();
+        menu();
     }
 }
     else if(price==price300 && GeographyToken300 == 0){
@@ -157,15 +159,15 @@ int GeographyQuestions(){
         if (strcmp (InpAns, "What is Sao Paulo?\n")==0 ){
             printf("Correct! +300 points!\n Press Enter to continue");
             while( getchar() != '\n' );
-            points =+300;
-            main();
+            points+=300;
+            menu();
         }
         
         else{
         printf("Incorrect! Press Enter to continue");
-        points=-300;
+        points-=300;
         while( getchar() != '\n' );
-        main();
+        menu();
     }
 }
     else if(price==price400 && GeographyToken400 == 0){
@@ -175,21 +177,21 @@ int GeographyQuestions(){
         if (strcmp (InpAns, "What is the Sargasso Sea?\n")==0 ){
             printf("Correct! +400 points!\n Press Enter to continue");
             while( getchar() != '\n' );
-            points =+400;
-            main();
+            points+=400;
+            menu();
         }
         
         else{
         printf("Incorrect! Press Enter to continue");
-        points=-400;
+        points-=400;
         while( getchar() != '\n' );
-        main();
+        menu();
     }
 }
     else{
         printf("You have already chosen this price & category!\nPress Enter to continue");
         while( getchar() != '\n' );
-        main();
+        menu();
     }
     
 }
@@ -207,15 +209,15 @@ int HistoryQuestions(){
         if (strcmp (InpAns, "What is 1776?\n")==0 ){
             printf("Correct! +100 points!\n Press Enter to continue");
             while( getchar() != '\n' );
-            points +=100;
-            main();
+            points+=100;
+            menu();
         }
         
         else{
         printf("Incorrect! Press Enter to continue");
-        points=-100;
+        points-=100;
         while( getchar() != '\n' );
-        main();
+        menu();
         }
 }
     else if(price==price200 && HistoryToken200 == 0){
@@ -225,15 +227,15 @@ int HistoryQuestions(){
         if (strcmp (InpAns, "What is Hiroshima?\n")==0 ){
             printf("Correct! +200 points!\n Press Enter to continue");
             while( getchar() != '\n' );
-            points=+200;
-            main();
+            points+=200;
+            menu();
         }
         
         else{
         printf("Incorrect! Press Enter to continue");
-        points=-200;
+        points-=200;
         while( getchar() != '\n' );
-        main();
+        menu();
     }
 }
     else if(price==price300 && HistoryToken300 == 0){
@@ -243,15 +245,15 @@ int HistoryQuestions(){
         if (strcmp (InpAns, "What is June 1914?\n")==0 ){
             printf("Correct! +300 points!\n Press Enter to continue");
             while( getchar() != '\n' );
-            points=+300;
-            main();
+            points+=300;
+            menu();
         }
         
         else{
         printf("Incorrect! Press Enter to continue");
-        points=-300;
+        points-=300;
         while( getchar() != '\n' );
-        main();
+        menu();
     }
 }
     else if(price==price400 && HistoryToken400 == 0){
@@ -261,27 +263,27 @@ int HistoryQuestions(){
         if (strcmp (InpAns, "Who is King John III Sobieski?\n")==0 ){
             printf("Correct! +400 points!\n Press Enter to continue");
             while( getchar() != '\n' );
-            points=+400;
-            main();
+            points+=400;
+            menu();
         }
         else if (strcmp (InpAns, "Who is King John 3 Sobieski?\n")==0 ){
             printf("Correct! +400 points!\n Press Enter to continue");
             while( getchar() != '\n' );
-            points=+400;
-            main();
+            points+=400;
+            menu();
         }
         
         else{
         printf("Incorrect! Press Enter to continue");
-        points=-400;
+        points-=400;
         while( getchar() != '\n' );
-        main();
+        menu();
     }
 }
     else{
         printf("You have already chosen this price & category!\nPress Enter to continue");
         while( getchar() != '\n' );
-        main();
+        menu();
     }
 }
 
@@ -298,15 +300,15 @@ int AnimalsQuestions(){
         if (strcmp (InpAns, "What is a cheetah?\n")==0 ){
             printf("Correct! +100 points!\n Press Enter to continue");
             while( getchar() != '\n' );
-            points =+100;
-            main();
+            points+=100;
+            menu();
         }
         
         else{
         printf("Incorrect! Press Enter to continue");
         points =-100;
         while( getchar() != '\n' );
-        main();
+        menu();
         }
 }
     else if(price==price200 && AnimalsToken200 == 0){
@@ -316,15 +318,15 @@ int AnimalsQuestions(){
         if (strcmp (InpAns, "What is a zebra?\n")==0 ){
             printf("Correct! +200 points!\n Press Enter to continue");
             while( getchar() != '\n' );
-            points =+200;
-            main();
+            points+=200;
+            menu();
         }
         
         else{
         printf("Incorrect! Press Enter to continue");
-        points=-200;
+        points-=200;
         while( getchar() != '\n' );
-        main();
+        menu();
     }
 }
     else if(price==price300 && AnimalsToken300 == 0){
@@ -334,15 +336,15 @@ int AnimalsQuestions(){
         if (strcmp (InpAns, "What is a giraffe?\n")==0 ){
             printf("Correct! +300 points!\n Press Enter to continue");
             while( getchar() != '\n' );
-            points =+300;
-            main();
+            points+=300;
+            menu();
         }
         
         else{
         printf("Incorrect! Press Enter to continue");
-        points=-300;
+        points-=300;
         while( getchar() != '\n' );
-        main();
+        menu();
     }
 }
     else if(price==price400 && AnimalsToken400 == 0){
@@ -352,21 +354,21 @@ int AnimalsQuestions(){
         if (strcmp (InpAns, "What is a peregrine falcon?\n")==0 ){
             printf("Correct! +400 points!\n Press Enter to continue");
             while( getchar() != '\n' );
-            points =+400;
-            main();
+            points+=400;
+            menu();
         }
         
         else{
         printf("Incorrect! Press Enter to continue");
-        points =-400;
+        points-=400;
         while( getchar() != '\n' );
-        main();
+        menu();
     }
 }
     else{
         printf("You have already chosen this price & category!\n Press Enter to continue");
         while( getchar() != '\n' );
-        main();
+        menu();
     }
 } 
 
@@ -384,15 +386,15 @@ int TelevisionQuestions(){
         if (strcmp (InpAns, "Who is Neo?\n")==0 ){
             printf("Correct! +100 points!\n Press Enter to continue");
             while( getchar() != '\n' );
-            points =+100;
-            main();
+            points+=100;
+            menu();
         }
         
         else{
         printf("Incorrect Press Enter to continue!");
-        points =-100;
+        points-=100;
         while( getchar() != '\n' );
-        main();
+        menu();
         }
 }
     else if(price==price200 && TelevisionToken200 == 0){
@@ -402,15 +404,15 @@ int TelevisionQuestions(){
         if (strcmp (InpAns, "What is Parasite?\n")==0 ){
             printf("Correct! +200 points!\n Press Enter to continue");
             while( getchar() != '\n' );
-            points =+200;
-            main();
+            points+=200;
+            menu();
         }
         
         else{
         printf("Incorrect! Press Enter to continue");
-        points=-200;
+        points-=200;
         while( getchar() != '\n' );
-        main();
+        menu();
     }
 }
     else if(price==price300 && TelevisionToken300 == 0){
@@ -420,15 +422,15 @@ int TelevisionQuestions(){
         if (strcmp (InpAns, "What is Reservoir Dogs?\n")==0 ){
             printf("Correct! +300 points!\n Press Enter to continue");
             while( getchar() != '\n' );
-            points=+300;
-            main();
+            points+=300;
+            menu();
         }
         
         else{
         printf("Incorrect! Press Enter to continue");
-        points=-300;
+        points-=300;
         while( getchar() != '\n' );
-        main();
+        menu();
     }
 }
     else if(price==price400 && TelevisionToken400 == 0){
@@ -438,43 +440,23 @@ int TelevisionQuestions(){
         if (strcmp (InpAns, "What is 744?\n")==0 ){
             printf("Correct! +400 points!\n Press Enter to continue");
             while( getchar() != '\n' );
-            points =+400;
-            main();
+            points+=400;
+            menu();
         }
         
         else{
         printf("Incorrect! Press Enter to continue");
-        points=-400;
+        points-=400;
         while( getchar() != '\n' );
-        main();
+        menu();
     }
 }
     else{
         printf("You have already chosen this price & category!\n Press Enter to continue");
         while( getchar() != '\n' );
-        main();
+        menu();
     }
 } 
-
-void categories(char catstring[]){
-    if (strcmp(catstring, "History\n")==0)
-        HistoryQuestions();
-    else if (strcmp(catstring, "Animals\n")==0)
-        AnimalsQuestions();
-    else if (strcmp(catstring, "Geography\n")==0)
-        GeographyQuestions();
-    else if (strcmp(catstring, "Television\n")==0)
-        TelevisionQuestions();
-    else{
-        printf("Invalid Category! It is case sensitive\n");
-        printf("PICK A CATEGORY!");
-        fgets(catstring, 50, stdin);
-        categories(catstring);
-        
-    }
-}
-
-
 
 void catselectionScreen(){
     char intro[ROWS][COLS]={
@@ -500,13 +482,35 @@ void catselectionScreen(){
    
 }
 
-int main(){
+void categories(char catstring[]){
+    if (strcmp(catstring, "History\n")==0)
+        HistoryQuestions();
+    else if (strcmp(catstring, "Animals\n")==0)
+        AnimalsQuestions();
+    else if (strcmp(catstring, "Geography\n")==0)
+        GeographyQuestions();
+    else if (strcmp(catstring, "Television\n")==0)
+        TelevisionQuestions();
+    else{
+        printf("Invalid Category! It is case sensitive\n");
+        printf("PICK A CATEGORY!");
+        fgets(catstring, 50, stdin);
+        categories(catstring);
+        
+    }
+}
+
+int menu(){
     catselectionScreen();
     char catstring[50];
     printf("Total points %d\n", points);
     printf("PICK A CATEGORY! ");
     fgets(catstring, 50 ,stdin);
     categories(catstring);
+}
+
+int main(){
+    menu();
    
 return 0; 
 }
