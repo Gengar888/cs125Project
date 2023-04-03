@@ -524,7 +524,7 @@ time_t t;
 time(&t);
   
 FILE *ptr = fopen("highscores.txt", "a");
-fprintf(ptr, "**************************\n%s\n**************************\nHIGH SCORE: %d", ctime(&t), &points);
+fprintf(ptr, "**************************\n%s\n**************************\nHIGH SCORE: %ls", ctime(&t), &points);
 fclose(ptr);
    
 return 0; 
