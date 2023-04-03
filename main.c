@@ -490,6 +490,8 @@ void catselectionScreen(){
 
 //Function that navigates a user to their selected category menu.
 void categories(char catstring[]){
+//defines date and time
+time_t t;   
     if (strcmp(catstring, "History\n")==0)
         HistoryQuestions();
     else if (strcmp(catstring, "Animals\n")==0)
@@ -498,34 +500,36 @@ void categories(char catstring[]){
         GeographyQuestions();
     else if (strcmp(catstring, "Movies\n")==0)
         MoviesQuestions();
+    else if (strcmp(catstring, "x\n")==0){
+        time(&t);
+//Creates a file "highscores.txt" that saves the timestamp when the user exited the game and the user's score.
+        FILE *ptr = fopen("highscores.txt", "a");
+        fprintf(ptr, "\n**************************\n%s\n**************************\nHIGH SCORE:", ctime(&t));
+        fprintf(ptr, "%ls", &points);
+        fclose(ptr);
+        exit(1);
+    }
     else{
         printf("Invalid Category! It is case sensitive\n");
         printf("PICK A CATEGORY!");
         fgets(catstring, 50, stdin);
         categories(catstring);
-        
-    }
+    }  
+    
 }
 
 int menu(){
     catselectionScreen();
     char catstring[50];
-    printf("Total points %d\n", points);
-    printf("PICK A CATEGORY! ");
+    printf("Total points: %d\n", points);
+    printf("**********PICK A CATEGORY!**********\n(Type 'x' to exit program): ");
     fgets(catstring, 50 ,stdin);
     categories(catstring);
 }
 
+
 int main(){
     menu();
-
-//defines date and time
-time_t t;
-time(&t);
-  
-FILE *ptr = fopen("highscores.txt", "a");
-fprintf(ptr, "**************************\n%s\n**************************\nHIGH SCORE: %ls", ctime(&t), &points);
-fclose(ptr);
    
 return 0; 
 }
