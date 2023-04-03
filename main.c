@@ -522,7 +522,7 @@ int menu(){
     catselectionScreen();
     char catstring[50];
     printf("Total points: %d\n", points);
-    printf("**********PICK A CATEGORY!**********\n(Type 'x' to exit program): ");
+    printf("(Type 'x' to exit program)\nPICK A CATEGORY! ");
     fgets(catstring, 50 ,stdin);
     categories(catstring);
 }
