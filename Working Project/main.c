@@ -458,7 +458,7 @@ time_t t;
     }
     else{
         printf("Invalid Category! It is case sensitive\n");
-        printf("PICK A CATEGORY!");
+        printf("PICK A CATEGORY! ");
         fgets(catstring, 50, stdin);
         categories(catstring);
     }  
