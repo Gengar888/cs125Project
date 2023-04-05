@@ -1,3 +1,5 @@
+//Authors: Raymond Siebert, Theodore Feldman, and Ruslan Gabdulin
+
 
 #include <stdio.h>
 #include <unistd.h>
