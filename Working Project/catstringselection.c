@@ -1,3 +1,4 @@
+//Authors: Raymond Siebert, Theodore Feldman, & Ruslan Gabdulin
 
 #include <stdio.h>
 #include "constants.h"
@@ -45,7 +46,8 @@ void priceselectionscreen(){
             "*      %d  *",
             "*      %d      *",
             "***************"};
-    sprintf((char*)&price[1],"*     %d     *",price100);
+//George helped us by suggesting we use "sprintf" as we had issues early on with our matrix not printing the int values			
+    sprintf((char*)&price[1],"*     %d     *",price100);   
     sprintf((char*)&price[2],"*     %d     *",price200);
     sprintf((char*)&price[6],"*     %d     *",price300);
     sprintf((char*)&price[7],"*     %d     *",price400);
@@ -63,6 +65,5 @@ void priceselectionscreen(){
     while((y==1) && (y< (ROWS-1)));
    
 }
-
 
 
