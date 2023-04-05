@@ -1,5 +1,5 @@
-//Make I/O File to output high scores at the end
-
+//CS125 Group Project
+//Jeopardy! game program made by Raymond Siebert, Theodore Feldman, and Ruslan Gabdulin
 
 #include <stdio.h>
 #include <stdlib.h>
@@ -56,7 +56,7 @@ void GeographyQuestions(){
     int price;
     
     priceselectionscreen();
-    
+//George helped with this section by suggesting we use the "%*c" to make the fgets work correctly     
     scanf("%d%*c",&price); // "%*c" This makes the fgets work because it makes fgets read a character and not save it  // meaning when we hit "Enter" after picking the price, the fgets will now work.
     if(price==price100 && GeographyToken100 == 0 ){   //Token makes sure you havent chosen this problem before
         GeographyToken100++;
@@ -130,6 +130,13 @@ void GeographyQuestions(){
         menu();
     }
 }
+//Error checking to catch incorrect user inputs and return them to the start of the price selection screen in their chosen category
+    if(price!=price100 && price!=price200 && price!=price300 && price!=price400){
+        printf("Invalid Selection!\nPress Enter to continue");
+        while( getchar() != '\n' );
+        GeographyQuestions();
+}
+//Error checking to make sure a user knows they cannot choose the same price more than once in a category
     else{
         printf("You have already chosen this price & category!\nPress Enter to continue");
         while( getchar() != '\n' );
@@ -138,14 +145,14 @@ void GeographyQuestions(){
     
 }
 
-//Function with all the History questions & error checking inside to account for any user errors.
+//Function with all the History questions & error checking inside to account for any user errors. Function follows same format as Geography Questions format.
 void HistoryQuestions(){
     int price;
     
     priceselectionscreen();
     
-    scanf("%d%*c",&price); // "%*c" This makes the fgets work because it makes fgets read a character and not save it  // meaning when we hit "Enter" after picking the price, the fgets will now work.
-    if(price==price100 && HistoryToken100 == 0 ){   //Token makes sure you havent chosen this problem before
+    scanf("%d%*c",&price); 
+    if(price==price100 && HistoryToken100 == 0 ){   
         HistoryToken100++;
         printf("America was founded in this year. \n");
         fgets(InpAns, 50 ,stdin);
@@ -165,7 +172,7 @@ void HistoryQuestions(){
 }
     else if(price==price200 && HistoryToken200 == 0){
         HistoryToken200++;
-        printf("This Japanese city became the first in history to have a nuclear warhead dropped on it? \n");
+        printf("This city became the first in history to have a nuclear warhead dropped on it. \n");
         fgets(InpAns, 100 ,stdin);
         if (strcmp (InpAns, "What is Hiroshima?\n")==0 ){
             printf("Correct! +200 points!\n Press Enter to continue");
@@ -223,21 +230,29 @@ void HistoryQuestions(){
         menu();
     }
 }
+//Error checking to catch incorrect user inputs and return them to the start of the price selection screen in their chosen category
+    if(price!=price100 && price!=price200 && price!=price300 && price!=price400){
+        printf("Invalid Selection!\nPress Enter to continue");
+        while( getchar() != '\n' );
+        HistoryQuestions();
+}
+//Error checking to make sure a user knows they cannot choose the same price more than once in a category
     else{
         printf("You have already chosen this price & category!\nPress Enter to continue");
         while( getchar() != '\n' );
         menu();
     }
+
 }
 
-//Function with all the Animals questions & error checking inside to account for any user errors.
+//Function with all the Animals questions & error checking inside to account for any user errors. Function follows same format as Geography Questions format.
 void AnimalsQuestions(){
     int price;
     
     priceselectionscreen();
     
-    scanf("%d%*c",&price); // "%*c" This makes the fgets work because it makes fgets read a character and not save it  // meaning when we hit "Enter" after picking the price, the fgets will now work.
-    if(price==price100 && AnimalsToken100 == 0 ){   //Token makes sure you havent chosen this problem before
+    scanf("%d%*c",&price); 
+    if(price==price100 && AnimalsToken100 == 0 ){   
         AnimalsToken100++;
         printf("This is animal reaches the fastest speeds on land. \n");
         fgets(InpAns, 50 ,stdin);
@@ -309,21 +324,29 @@ void AnimalsQuestions(){
         menu();
     }
 }
+//Error checking to catch incorrect user inputs and return them to the start of the price selection screen in their chosen category
+    if(price!=price100 && price!=price200 && price!=price300 && price!=price400){
+        printf("Invalid Selection!\nPress Enter to continue");
+        while( getchar() != '\n' );
+        AnimalsQuestions();
+}
+//Error checking to make sure a user knows they cannot choose the same price more than once in a category
     else{
-        printf("You have already chosen this price & category!\n Press Enter to continue");
+        printf("You have already chosen this price & category!\nPress Enter to continue");
         while( getchar() != '\n' );
         menu();
-    }
-} 
+}
 
-//Function with all the Movies questions & error checking inside to account for any user errors.
+}
+
+//Function with all the Movies questions & error checking inside to account for any user errors. Function follows same format as Geography Questions format.
 void MoviesQuestions(){
     int price;
     
     priceselectionscreen();
-    
-    scanf("%d%*c",&price); // "%*c" This makes the fgets work because it makes fgets read a character and not save it  // meaning when we hit "Enter" after picking the price, the fgets will now work.
-    if(price==price100 && MoviesToken100 == 0 ){   //Token makes sure you havent chosen this problem before
+
+    scanf("%d%*c",&price); 
+    if(price==price100 && MoviesToken100 == 0 ){   
         MoviesToken100++;
         printf("This is the name of the Matrix's main character. \n");
         fgets(InpAns, 50 ,stdin);
@@ -395,12 +418,20 @@ void MoviesQuestions(){
         menu();
     }
 }
+//Error checking to catch incorrect user inputs and return them to the start of the price selection screen in their chosen category
+    if(price!=price100 && price!=price200 && price!=price300 && price!=price400){
+        printf("Invalid Selection!\nPress Enter to continue");
+        while( getchar() != '\n' );
+        MoviesQuestions();
+}
+//Error checking to make sure a user knows they cannot choose the same price more than once in a category
     else{
-        printf("You have already chosen this price & category!\n Press Enter to continue");
+        printf("You have already chosen this price & category!\nPress Enter to continue");
         while( getchar() != '\n' );
         menu();
     }
-} 
+    
+}
 
 
 
@@ -421,7 +452,7 @@ time_t t;
 //Creates a file "highscores.txt" that saves the timestamp when the user exited the game and the user's score.
         FILE *ptr = fopen("highscores.txt", "a");
         fprintf(ptr, "\n**************************\n%s\n**************************\nHIGH SCORE:", ctime(&t));
-        fprintf(ptr, "%d", points);
+        fprintf(ptr, "%d\n", points);
         fclose(ptr);
         exit(1);
     }
@@ -434,11 +465,12 @@ time_t t;
     
 }
 
+//This function returns the user to the categories menu & is called at the end of all the question category functions
 void menu(){
     catselectionScreen();
     char catstring[50];
     printf("Total points: %d\n", points);
-    printf("(Type 'x' to exit program)\nPICK A CATEGORY! ");
+    printf("\nRULES: All answers should be in the format of question sentences. Use 'Who is' when answers relate to people & 'What is' for everything else. \nDon't forget to include a question mark at the end of your answer!\n\n(Type 'x' to exit program)\nPICK A CATEGORY! ");
     fgets(catstring, 50 ,stdin);
     categories(catstring);
 }
